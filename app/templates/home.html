@@ -1,0 +1,64 @@
+<!doctype html>
+{% load user_agents %}
+{% load static %}
+<html lang="en">
+  <head>
+    {% if request|is_mobile %}
+    Mobile version
+{% endif %}
+
+{% if request|is_tablet %}
+    Tablet version
+{% endif %}
+
+{% if request|is_pc %}
+    PC version
+{% endif %}
+
+
+
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
+    <title>Waves!</title>
+    <center><img  src="{% static 'img/logowaves.png' %} "  width="10%" height="10%"></center>
+  </head>
+  <body>
+    
+    <h1 style="text-align: center; padding-top: 10px;">Bienvenido a <span style="color: #0099ff;">Waves!</span></h1>
+    <p>
+      <span style="color: #0099ff;">Waves! </span>es una app destinada al uso académico en el que podrás registrar la asistencia de cada uno de tus estudiantes mediante un código QR.
+    </p>
+    {% if request|is_mobile %}
+  <center><button style="background-color: #0099ff; color: white;" >Descargar</button></center>
+{% endif %}
+
+{% if request|is_tablet %}
+<center><button style="background-color: #0099ff; color: white;" >Descargar</button></center>
+{% endif %}
+
+{% if request|is_pc %}
+<center><img src="{% static 'img/qr.png' %} "></center>
+{% endif %}
+
+
+{% if request|is_pc %}
+<p>Puedes descargarla mediante el <span style="color: #0099ff;">QR </span>que se encuentra arriba.</p>
+{% endif %}
+{% if request|is_mobile %}
+<p>Puedes descargarla mediante el <span style="color: #0099ff;">Botón </span>que se encuentra arriba.</p>
+    
+{% endif %}
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> 
+  </body>
+  <footer >
+    <svg id="wave" style="transform:rotate(0deg); transition: 0.3s" viewBox="0 0 1440 170" version="1.1" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="sw-gradient-0" x1="0" x2="0" y1="1" y2="0"><stop stop-color="rgba(0, 153, 255, 1)" offset="0%"></stop><stop stop-color="rgba(0, 153, 255, 1)" offset="100%"></stop></linearGradient></defs><path style="transform:translate(0, 0px); opacity:1" fill="url(#sw-gradient-0)" d="M0,34L26.7,45.3C53.3,57,107,79,160,82.2C213.3,85,267,68,320,68C373.3,68,427,85,480,93.5C533.3,102,587,102,640,85C693.3,68,747,34,800,34C853.3,34,907,68,960,85C1013.3,102,1067,102,1120,102C1173.3,102,1227,102,1280,93.5C1333.3,85,1387,68,1440,51C1493.3,34,1547,17,1600,8.5C1653.3,0,1707,0,1760,22.7C1813.3,45,1867,91,1920,107.7C1973.3,125,2027,113,2080,113.3C2133.3,113,2187,125,2240,124.7C2293.3,125,2347,113,2400,96.3C2453.3,79,2507,57,2560,56.7C2613.3,57,2667,79,2720,79.3C2773.3,79,2827,57,2880,51C2933.3,45,2987,57,3040,56.7C3093.3,57,3147,45,3200,45.3C3253.3,45,3307,57,3360,51C3413.3,45,3467,23,3520,31.2C3573.3,40,3627,79,3680,102C3733.3,125,3787,130,3813,133.2L3840,136L3840,170L3813.3,170C3786.7,170,3733,170,3680,170C3626.7,170,3573,170,3520,170C3466.7,170,3413,170,3360,170C3306.7,170,3253,170,3200,170C3146.7,170,3093,170,3040,170C2986.7,170,2933,170,2880,170C2826.7,170,2773,170,2720,170C2666.7,170,2613,170,2560,170C2506.7,170,2453,170,2400,170C2346.7,170,2293,170,2240,170C2186.7,170,2133,170,2080,170C2026.7,170,1973,170,1920,170C1866.7,170,1813,170,1760,170C1706.7,170,1653,170,1600,170C1546.7,170,1493,170,1440,170C1386.7,170,1333,170,1280,170C1226.7,170,1173,170,1120,170C1066.7,170,1013,170,960,170C906.7,170,853,170,800,170C746.7,170,693,170,640,170C586.7,170,533,170,480,170C426.7,170,373,170,320,170C266.7,170,213,170,160,170C106.7,170,53,170,27,170L0,170Z"></path></svg>
+  </footer>
+</html>
